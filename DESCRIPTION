@@ -1,0 +1,12 @@
+Package: mylittlepony
+Version: 0.0.0.9000
+Title: A package for learning about the basics of package development
+Description: Contains some data about my little ponies.
+Authors@R: c(
+    person("Hadley", "Wickham", , "hadley@rstudio.com", role = c("aut", "cre")),
+    person("RStudio", role = "cph")
+  )
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true

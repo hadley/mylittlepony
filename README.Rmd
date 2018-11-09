@@ -1,0 +1,92 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# mylittlepony
+
+The goal of mylittlepony is to ...
+
+## Installation
+
+You can install the released version of mylittlepony from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("mylittlepony")
+```
+
+## Example
+```{r, include = FALSE}
+library(dplyr)
+```
+
+## Pony data
+
+The package includes a small dataset with each of the main pony's data.  The data includes preferences and features that when compared to another inside the group, they could be something they have in common, or something they could learn from each other.
+
+```{r}
+library(mylittlepony)
+
+my_little_pony
+```
+
+## Hanging out
+
+The first function to review is `hang_out()`. It selects two or more randomly selected friends (rows). 
+
+```{r}
+library(dplyr)
+
+my_little_pony  %>%
+  hang_out() 
+```
+
+The number of friends can be overriden:
+
+```{r}
+my_little_pony  %>%
+  hang_out(3) 
+```
+
+## Magic of friendship!!
+
+The `magic_of_friendship()` function compares two or more friend's preferences and features to tell them what they have in common and what they can learn from each other!
+
+The function returns a list with three data frames:
+
+1. Names
+1. Things in common
+1. Things they can learn from each other
+
+```{r}
+my_little_pony  %>%
+  hang_out()  %>%
+  magic_of_friendship()
+```
+
+
+### It works with other data 
+
+The functions actually work with other data sets:
+
+```{r}
+library(tibble)
+
+mtcars %>%
+  rownames_to_column("model") %>%
+  hang_out(3) %>%
+  magic_of_friendship("model")
+```
+
+
+
+

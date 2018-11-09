@@ -10,9 +10,13 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
+Imports:
+    tibble,
+    purrr
 Suggests: 
     knitr,
     rmarkdown
 VignetteBuilder: knitr
 URL: https://github.com/hadley/mylittlepony
 BugReports: https://github.com/hadley/mylittlepony/issues
+RoxygenNote: 6.1.0
